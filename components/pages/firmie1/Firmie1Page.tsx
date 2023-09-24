@@ -1,17 +1,29 @@
-import Image from "next/image";
-import Link from "next/link";
+'use client'
+
+import Image from "next/image"
+import Link from "next/link"
+import { motion } from 'framer-motion'
 
 const Firmie1Page = () => {
   return (
-    <div className="relative flex justify-between container w-full  px-[200px] pt-28 pb-14">
-      <div className="flex flex-col gap-12">
+    <div className="relative flex justify-between w-full px-4 sm:px-10 xl:container py-10 sm:py-20">
+      <div className="absolute -right-[340px] -top-0 flex aspect-square w-[700px] h-[700px]">
+        <Image src="/images/Component2.png" alt="Placeholder" fill={true} />
+      </div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ ease: 'linear', duration: 1 }}
+        className="relative flex flex-col gap-12"
+      >
         <h1 className="text-theme-primary font-bold text-5xl">
           NASZA HISTORIA
         </h1>
         <h2 className="text-theme-primary underline underline-offset-4 font-bold text-3xl">
           Jak zaczęliśmy
         </h2>
-        <div className="w-[600px] h-[296px] flex flex-col gap-4 -mt-6">
+        <div className="max-w-[600px] flex flex-col gap-4 -mt-6">
           <p className="text-theme-text">
             W 2022 roku podczas jednego ze spotkań branżowych narodził się
             pomysł zbudowania prawdziwie &quot;chmurowego&quot; rozwiązania
@@ -29,18 +41,13 @@ const Firmie1Page = () => {
             układanki tworząc wyjątkowe rozwiązanie płatnicza w skali Polski i
             Europy.
           </p>
-        </div>
-        <div className="flex justify-end items-center mt-8">
-          <Link href="/firmie2">
-            <h2 className="text-theme-text items-center text-sm underline underline-offset-4">
+          <div className="flex justify-end items-center mt-8">
+            <Link href="/firmie2" className="font-medium text-theme-text hover:text-theme-secondary active:text-theme-text items-center text-sm hover-underline">
               Zespół →
-            </h2>
-          </Link>
+            </Link>
+          </div>
         </div>
-      </div>
-      <div className="absolute -right-[340px] -top-0 flex aspect-square w-[700px] h-[700px]">
-        <Image src="/images/Component2.png" alt="Placeholder" fill={true} />
-      </div>
+      </motion.div>
     </div>
   );
 };

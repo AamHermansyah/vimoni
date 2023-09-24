@@ -3,6 +3,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Work_Sans } from 'next/font/google'
 import Footer from '@/components/layouts/Footer'
+import Script from 'next/script'
 
 const work_wans = Work_Sans({ subsets: ['latin'] })
 
@@ -19,11 +20,32 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={work_wans.className}>
-        <div className="bg-[#edeef2] overflow-x-hidden">
-          <Navbar/>
-            {children}
-          <Footer/>
-        </div>
+        <Navbar />
+        {children}
+        <Footer />
+        <Script id="btn-script">
+          {`
+            const btnShadow = document.querySelectorAll('.btn-shadow');
+            btnShadow.forEach((btn) => {
+              btn.addEventListener(('click'), (e) => {
+                btn.classList.add('active');
+                setTimeout(() => {
+                  btn.classList.remove('active');
+                }, 500);
+              })
+            });
+
+            const pluginShadowBtn = document.querySelectorAll('.plugin-shadow');
+            pluginShadowBtn.forEach((btn) => {
+              btn.addEventListener(('click'), (e) => {
+                btn.classList.add('active');
+                setTimeout(() => {
+                  btn.classList.remove('active');
+                }, 500);
+              })
+            });
+          `}
+        </Script>
       </body>
     </html>
   )

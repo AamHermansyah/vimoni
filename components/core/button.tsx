@@ -1,15 +1,20 @@
 import React from 'react'
 
 type propTypes = {
-  title : string;
+  title: string;
+  className?: string;
+  onClick?: () => void;
 }
 
-const Button = ({title} : propTypes) => {
+const Button = ({ title, className = '', onClick }: propTypes) => {
   return (
-    <button className="text-theme-text shadow-[7px_7px_15px_5px_#00000019] px-8 h-[40px] rounded-xl hover:bg-theme-secondary hover:text-white">
-      <a className='place-self-center'>
-      {title}  
-      </a>
+    <button
+      className={`${className} text-theme-text bg-white btn-shadow px-8 h-[40px] rounded-xl`}
+      onClick={() => {
+        if (onClick) onClick();
+      }}
+    >
+      {title}
     </button>
   )
 }

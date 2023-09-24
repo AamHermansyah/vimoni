@@ -1,9 +1,9 @@
-import ProduktPage from '@/components/pages/produkt-page/ProduktPage'
+import ProduktPage from '@/components/pages/produkt/ProduktPage'
 
 const page = () => {
   return (
     <div>
-      <ProduktPage/>
+      <ProduktPage />
     </div>
   )
 }

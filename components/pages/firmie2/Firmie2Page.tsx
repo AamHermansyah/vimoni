@@ -1,16 +1,28 @@
-import Image from "next/image";
-import Link from "next/link";
-import { BsFillBuildingFill, BsTelephoneFill } from "react-icons/bs";
-import { MdEmail } from "react-icons/md";
+'use client'
+
+import Image from "next/image"
+import Link from "next/link"
+import { BsFillBuildingFill, BsTelephoneFill } from "react-icons/bs"
+import { MdEmail } from "react-icons/md"
+import { motion } from 'framer-motion'
 
 const Firmie1Page = () => {
   return (
-    <div className="relative flex justify-between container w-full px-[200px] py-28">
-      <div className="flex flex-col">
+    <div className="relative flex justify-between w-full px-4 sm:px-10 xl:container py-10 sm:py-20">
+      <div className="absolute -right-[340px] -top-0 flex aspect-square w-[700px] h-[700px]">
+        <Image src="/images/Component2.png" alt="Placeholder" fill={true} />
+      </div>
+      <motion.div
+        className="relative flex flex-col"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ ease: 'linear', duration: 1 }}
+      >
         <h2 className="text-theme-primary underline underline-offset-4 font-bold text-3xl py-2">
           Zespół
         </h2>
-        <div className="w-[600px] flex flex-col gap-4">
+        <div className="max-w-[600px] flex flex-col gap-4">
           <p className="text-theme-text">
             Jesteśmy grupą doświadczonych przedsiębiorców i inżynierów z
             przełomowymi pomysłami, które chcemy wykorzystać, by przyczynić się
@@ -33,7 +45,7 @@ const Firmie1Page = () => {
               <li>Damian Stawiarski</li>
             </ul>
           </div>
-          <div className="bg-[#EDEEF2] flex flex-col gap-2 justify-center container px-16 w-[563px] border-2 rounded-lg box-card text-theme-text py-2 mt-2">
+          <div className="bg-[#EDEEF2] px-8 max-w-[563px] border-2 rounded-lg box-card text-theme-text py-4 mt-2">
             <h1 className="uppercase font-semibold text-lg">
               Vimoni Smart Payment Services Sp z o.o.
             </h1>
@@ -53,18 +65,15 @@ const Firmie1Page = () => {
               <p>info@vimoni.pl</p>
             </div>
           </div>
+          <div className="flex justify-end items-center mt-8">
+            <Link href="/firmie1">
+              <span className="font-medium text-theme-text hover:text-theme-secondary active:text-theme-text items-center text-sm hover-underline">
+                Jak zaczeliśmy →
+              </span>
+            </Link>
+          </div>
         </div>
-        <div className="flex justify-end items-center mt-8">
-          <Link href="/firmie1">
-            <h2 className="text-theme-text items-center text-sm underline underline-offset-4">
-              Jak zaczeliśmy →
-            </h2>
-          </Link>
-        </div>
-      </div>
-      <div className="absolute -right-[340px] -top-0 flex aspect-square w-[700px] h-[700px]">
-        <Image src="/images/Component2.png" alt="Placeholder" fill={true} />
-      </div>
+      </motion.div>
     </div>
   );
 };

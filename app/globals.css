@@ -8,22 +8,51 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  @apply bg-[#edeef2] overflow-x-hidden;
+}
+
+@layer components {
+  .btn-shadow {
+    box-shadow: -6px -6px 20px 0px #FFFFFF,
+      8px 8px 24px 0px #3333333D;
+    @apply transition-all duration-200;
+  }
+
+  .btn-shadow:not(.active):hover {
+    @apply hover:bg-theme-secondary hover:text-white;
+  }
+
+  .btn-shadow.active {
+    box-shadow: 5px 5px 10px 0px #3333333D inset,
+      -5px -5px 10px 0px #FFFFFF inset;
+  }
+
+  .box-card {
+    box-shadow: -5px -5px 50px 0px #FFFFFF80 inset,
+      3px 5px 20px 0px #33333326 inset;
+  }
+
+  .plugin-shadow {
+    @apply transition-all duration-200;
+    box-shadow: 8px 8px 24px 0px #3333333D,
+      -6px -6px 20px 0px #FFFFFF;
+  }
+
+  .plugin-shadow:not(.active):hover {
+    @apply bg-[#D4D5D9];
+    box-shadow: 8px 8px 24px 0px #3333332f,
+      -6px -6px 20px 0px #FFFFFF;
+  }
+
+  .plugin-shadow.active {
+    box-shadow: 5px 5px 10px 0px #3333333D inset,
+      -5px -5px 10px 0px #ffffff inset;
+  }
 }
 
 @layer utilities {
@@ -32,16 +61,10 @@ body {
   }
 
   .hover-underline::after {
-    @apply content-[''] bg-theme-secondary h-[1.5px] absolute w-[0%] left-1/2 transform -translate-x-1/2 -bottom-[5px] rounded-xl duration-300;
+    @apply content-[''] bg-theme-secondary active:bg-theme-text h-[1.5px] absolute w-[0%] left-1/2 transform -translate-x-1/2 -bottom-[5px] rounded-xl duration-300;
   }
 
   .hover-underline:hover::after {
     @apply w-full;
   }
-}
-
-.box-card {
-  box-shadow: 10px 10px 32px 5px rgba(210, 210, 210, 0.75) inset;
-  -webkit-box-shadow: 10px 10px 32px 5px rgba(210, 210, 210, 0.75) inset;
-  -moz-box-shadow: 10px 10px 32px 5px rgba(210, 210, 210, 0.75) inset;
 }

@@ -1,10 +1,9 @@
-import MainPage from '@/components/pages/main-page/MainPage'
-import Image from 'next/image'
+import MainPage from '@/components/pages/main/MainPage'
 
 export default function Home() {
   return (
     <>
-    <MainPage/>
+      <MainPage />
     </>
   )
 }

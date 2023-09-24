@@ -1,9 +1,9 @@
-import PluginsPage from '@/components/pages/plugins-page/PluginsPage'
+import PluginsPage from '@/components/pages/plugins/PluginsPage'
 
 const page = () => {
   return (
     <div>
-      <PluginsPage/>
+      <PluginsPage />
     </div>
   )
 }
