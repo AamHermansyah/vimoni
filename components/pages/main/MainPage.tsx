@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 
 const MainPage = () => {
   return (
-    <div className="relative w-full px-10 xl:container py-44">
+    <div className="relative w-full px-10 xl:container py-44 overflow-hidden">
       <div className="absolute -right-[340px] -top-0 flex w-[700px] aspect-square">
         <Image src="/images/Component2.png" alt="Placeholder" fill={true} />
       </div>

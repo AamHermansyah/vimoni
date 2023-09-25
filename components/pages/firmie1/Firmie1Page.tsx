@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 
 const Firmie1Page = () => {
   return (
-    <div className="relative flex justify-between w-full px-4 sm:px-10 xl:container py-10 sm:py-20">
+    <div className="relative flex justify-between w-full px-4 sm:px-10 xl:container py-10 sm:py-20 overflow-hidden">
       <div className="absolute -right-[340px] -top-0 flex aspect-square w-[700px] h-[700px]">
         <Image src="/images/Component2.png" alt="Placeholder" fill={true} />
       </div>
