@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <header>
       <div className="border-b border-[#d8d8dc] text-theme-text gap-2">
-        <div className="flex justify-between items-center py-4 sm:py-8 px-4 sm:px-10 xl:container">
+        <div className="flex justify-between items-center py-4 sm:py-8 px-4 sm:px-10 xl:px-16 xl:container">
           <div className="px-4">
             <Link href="/" className="block relative w-[100px] sm:w-[153px] aspect-[3/1]">
               <Image
@@ -25,7 +25,7 @@ const Navbar = () => {
               />
             </Link>
           </div>
-          <div className="hidden lg:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-10">
             <button className="hover-underline hover:text-theme-secondary active:text-theme-text">
               Usługi
             </button>

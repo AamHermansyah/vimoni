@@ -7,7 +7,7 @@ import Link from "next/link"
 const Footer = () => {
   return (
     <div className="w-full border-t border-[#d8d8dc] text-theme-text text-sm">
-      <div className="py-4 px-4 sm:px-10 xl:container flex justify-between items-center gap-y-10 gap-x-20 flex-wrap">
+      <div className="py-4 px-4 sm:px-10 xl:px-16 xl:container flex justify-between items-center gap-y-10 gap-x-20 flex-wrap">
         <Image
           src="/images/logo2.png"
           alt="logo"

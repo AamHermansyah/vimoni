@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 
 const KarieraPage = () => {
   return (
-    <div className="relative flex justify-between w-full px-4 sm:px-10 xl:container pb-28 pt-10 sm:pt-28 overflow-hidden">
+    <div className="relative flex justify-between w-full px-4 sm:px-10 xl:px-16 xl:container pb-28 pt-10 sm:pt-28 overflow-hidden">
       <motion.div
         className="space-y-14"
         initial={{ opacity: 0 }}
